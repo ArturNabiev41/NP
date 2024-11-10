@@ -1,0 +1,925 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #8B0000);
+    /* Тёмно-красный и чёрный градиент */
+    color: white;
+    /* Цвет текста по умолчанию */
+    animation: backgroundAnimation 30s linear infinite;
+    /* Фоновая анимация */
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    /* Полупрозрачный фон для заголовка */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+p {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+h2 {
+    margin: 20px 0;
+    text-align: center;
+    /* Центрируем заголовки h2 */
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    /* Центрируем карточки */
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    /* Ширина карточек */
+    height: 400px;
+    /* Высота карточек */
+    position: relative;
+    margin: 20px;
+    color: white;
+    /* Цвет текста */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(-5deg);
+    /* Поворачиваем налево */
+    /* Увеличение и вращение карточки */
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    transition: transform 0.3s;
+    transform: translateY(100%);
+}
+
+.card:hover .content {
+    transform: translateY(0);
+    /* Показать текст */
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.copy {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: none;
+    /* Скрыть описание по умолчанию */
+}
+
+.card:hover .description {
+    display: block;
+    /* Показать описание при наведении */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Плавная анимация кнопки */
+}
+
+.btn:hover {
+    background-color: #ff8500;
+    /* Яркий цвет при наведении */
+    transform: scale(1.1);
+    /* Увеличение кнопки */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(51, 51, 51, 0.8);
+    /* Полупрозрачный фон для футера */
+}
+
+/* Плавная прокрутка для якорных ссылок */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Фоновая анимация */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.quote-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.quote {
+    width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideIn 10s linear infinite;
+    text-align: center;
+    color: white;
+    position: relative;
+    transform: translateX(-100%);
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.quote-text {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7), -2px -2px 4px rgba(255, 255, 255, 0.7);
+}
+
+.author {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7), -2px -2px 4px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+        /* Начинаем слева за пределами экрана */
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(33%);
+        /* Перемещаемся к нужной позиции */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(33%);
+        /* Останавливаемся на месте */
+    }
+}
+
+/* Анимация для картинок, входящих справа */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(300%);
+        /* Начинаем справа за пределами экрана */
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(33%);
+        /* Перемещаемся к нужной позиции */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(33%);
+        /* Останавливаемся на месте */
+    }
+}
+
+
+
+.quote.left {
+    animation: slideInLeft 6s ease-out forwards;
+}
+
+.quote.right {
+    animation: slideInRight 6s ease-out forwards;
+}
+
+.quote:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.quote:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.quote:nth-child(3) {
+    animation-delay: 0s;
+}
+
+.quote:nth-child(4) {
+    animation-delay: 2.5s;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+.calendar-container {
+    width: 365px;
+    margin: 0 auto;
+    position: relative;
+    margin-left: 360px;
+}
+
+.calendar-container header {
+    border-radius: 1em 1em 0 0;
+    background: #e66b6b;
+    color: #fff;
+    height: 150px;
+    /* Устанавливаем фиксированную высоту */
+    padding: 0 1.5em;
+    /* Убираем вертикальные отступы */
+    text-align: center;
+}
+
+.day {
+    font-size: 5em;
+    /* Уменьшен размер шрифта для дня */
+    font-weight: 900;
+    line-height: 1em;
+    text-align: center;
+    width: 100%;
+    /* Изменено на 100% для выравнивания по ширине */
+}
+
+.month {
+    font-size: 2.5em;
+    /* Уменьшено с 3em до 2.5em */
+    line-height: 1em;
+    text-transform: lowercase;
+}
+
+.calendar {
+    background: #fff;
+    border-radius: 0 0 1em 1em;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    color: #555;
+    display: inline-block;
+    padding: 1.5em 1em;
+}
+
+.calendar thead {
+    color: #e66b6b;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.calendar td {
+    padding: .5em 0.8em;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.calendar tbody td {
+    padding: .5em 0.8em;
+    text-align: center;
+    font-size: 1.1em;
+    transition: background-color 0.3s, color 0.3s;
+    /* Плавный переход для фона и цвета текста */
+}
+
+.calendar tbody td:hover {
+    background: #e66b6b;
+    color: #fff;
+    cursor: pointer;
+    /* Указатель при наведении */
+}
+
+.nd {
+    background-color: #4caf50;
+    /* Зеленый фон для сегодняшней даты */
+    color: #fff;
+    /* Белый текст */
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0.3em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.important {
+    background-color: #ffcc00;
+    /* Ярко-желтый фон для выделения */
+    color: #333;
+    /* Темный текст для контраста */
+    font-weight: bold;
+    /* Жирный шрифт для выделения */
+    border-radius: 50%;
+    /* Закругление для визуального эффекта */
+    padding: 0.3em;
+    /* Отступы для выделения */
+    transition: background-color 0.3s, color 0.3s;
+    /* Плавный переход */
+}
+
+.important:hover,
+.nd:hover {
+    background-color: #e66b6b;
+    /* Красный при наведении */
+    color: #fff;
+    /* Белый текст при наведении */
+    cursor: pointer;
+}
+
+.ring-left,
+.ring-right {
+    position: absolute;
+    top: 120px;
+    /* Скорректировано с 167px */
+}
+
+.ring-left {
+    left: 1.5em;
+}
+
+.ring-right {
+    right: 1.5em;
+}
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+    background: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    content: "";
+    display: inline-block;
+    margin: 8px;
+    height: 30px;
+    width: 7px;
+}
+
+/* Основной контейнер с двумя колонками */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Секция с основной страницей */
+.page-content {
+    flex: 1;
+    /* Контент занимает оставшееся пространство */
+}
+
+/* Секция с формой регистрации */
+.webinar-registration {
+    position: relative;
+    margin: auto;
+    width: 350px;
+    padding: 15px;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 400px;
+}
+
+.webinar-registration h3 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.webinar-registration label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.webinar-registration input,
+.webinar-registration select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+}
+
+.webinar-registration button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.webinar-registration button:hover {
+    background-color: #ff8500;
+}
+
+/* Убираем стрелки при фокусе на поле ввода */
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+/* Плавная прокрутка для якорных ссылок */
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Отключаем горизонтальный скроллинг */
+}
+
+#reviews {
+    margin: 50px 0;
+}
+
+#reviews h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+#review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#review-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#review-form input,
+#review-form select,
+#review-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+#reviews-list .review {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#reviews-list .review h3 {
+    margin-top: 0;
+}
+
+#reviews-list .review p {
+    font-style: italic;
+}
+
+.cont {
+    width: 93%;
+    max-width: 350px;
+    text-align: center;
+    margin: 4% auto;
+    padding: 30px 0;
+    background: #111;
+    border-radius: 5px;
+    border: thin solid #444;
+    overflow: hidden;
+}
+
+hr {
+    margin: 20px;
+    border: none;
+    border-bottom: thin solid rgba(255, 255, 255, .1);
+}
+
+div.title {
+    font-size: 2em;
+}
+
+h1 span {
+    font-weight: 300;
+    color: #Fd4;
+}
+
+.reviews-section {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.reviews-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review {
+    background-color: #fff;
+    border-radius: 15px;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    align-items: center;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    /* Плавное поднимание карточки */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.review-author {
+    font-weight: bold;
+    color: #001F61;
+    font-size: 16px;
+}
+
+.review-text {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    font-size: 22px;
+    color: #FFD700;
+    transition: color 0.3s ease;
+}
+
+.star {
+    margin: 0 2px;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+.star:hover,
+.star.filled:hover {
+    color: #FF6A00;
+    cursor: pointer;
+}
+
+.rating-text {
+    font-size: 14px;
+    margin-left: 8px;
+    color: #333;
+}
+
+
+.progress {
+    background-color: rgba(100, 100, 100, 0.2);
+    border-radius: 5px;
+    position: relative;
+    margin: 10px 0;
+    height: 10px;
+    width: 100%;
+    max-width: 200px;
+    transition: width 1s ease;
+}
+
+.progress-done {
+    background: linear-gradient(to left, rgb(242, 112, 156), rgb(255, 148, 114));
+    box-shadow: 0 3px 3px -5px rgb(242, 112, 156), 0 2px 5px rgb(242, 112, 156);
+    border-radius: 5px;
+    height: 10px;
+    width: 0;
+    transition: width 1s ease 0.3s;
+}
+
+.percent {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 480px) {
+    .review {
+        max-width: 95%;
+    }
+}
+
+/* Основной стиль секции отзывов */
+.reviews-section {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Заголовок секции отзывов */
+.reviews-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #FD4;
+}
+
+/* Стиль контейнера с отзывами */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Отзыв */
+.review {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    color: #EEE;
+    transition: transform 0.3s ease;
+}
+
+.review:nth-child(2) {
+    position: relative;
+    top: -20px;
+    /* Сдвигаем блок отзыва с Марией на 20px вверх */
+}
+
+
+/* Наведение на отзыв */
+.review:hover {
+    transform: translateY(-10px);
+}
+
+/* Автор отзыва */
+.review-author {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #FD4;
+}
+
+/* Текст отзыва */
+.review-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Оценка и звезды */
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 1.5em;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+.star.filled {
+    color: #FD4;
+}
+
+.rating-text {
+    font-size: 1.1em;
+    color: #FD4;
+}
+
+/* Прогресс */
+.progress {
+    background-color: #444;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-done {
+    height: 100%;
+    background-color: #FD4;
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Процент */
+.percent {
+    margin-top: 5px;
+    color: #FD4;
+    font-weight: bold;
+}
+
+/* Форма отзыва */
+.review-form {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #EEE;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Форма отзыва при наведении */
+.review-form:hover {
+    transform: translateY(-10px);
+}
+
+/* Заголовок формы отзыва */
+.review-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #FD4;
+}
+
+/* Стили для блока звезд */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input.star {
+    display: none;
+    /* Скрываем радиокнопки */
+}
+
+label.star {
+    font-size: 3em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #444;
+    /* Цвет серых звезд */
+}
+
+input.star:checked~label.star {
+    color: #FD4;
+    /* Цвет выбранных звезд */
+}
+
+input.star:checked+label.star {
+    color: #FD4;
+    /* Цвет выбранных звезд */
+}
+
+label.star:hover {
+    transform: scale(1.2);
+    /* Увеличение звезды при наведении */
+}
+
+input.star:checked+label.star:hover {
+    transform: scale(1.3);
+    /* Увеличение звезды при наведении после выбора */
+}
+
+
+/* Текстовое поле для отзыва */
+textarea.review {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #444;
+    color: #EEE;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+    height: 120px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+textarea.review:focus {
+    background-color: #444;
+    outline: none;
+}
+
+/* Кнопка отправить */
+button {
+    padding: 12px 20px;
+    background-color: #FD4;
+    border: none;
+    color: #111;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fd9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
