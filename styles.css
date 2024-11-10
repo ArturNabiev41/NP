@@ -3,16 +3,12 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #000000, #8B0000);
-    /* Тёмно-красный и чёрный градиент */
     color: white;
-    /* Цвет текста по умолчанию */
     animation: backgroundAnimation 30s linear infinite;
-    /* Фоновая анимация */
 }
 
 header {
     background-color: rgba(51, 51, 51, 0.8);
-    /* Полупрозрачный фон для заголовка */
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -96,19 +92,15 @@ h2 {
 .page-content {
     display: flex;
     justify-content: center;
-    /* Центрируем карточки */
     flex-wrap: wrap;
 }
 
 .card {
     width: 300px;
-    /* Ширина карточек */
     height: 400px;
-    /* Высота карточек */
     position: relative;
     margin: 20px;
     color: white;
-    /* Цвет текста */
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -117,8 +109,6 @@ h2 {
 
 .card:hover {
     transform: scale(1.05) rotate(-5deg);
-    /* Поворачиваем налево */
-    /* Увеличение и вращение карточки */
 }
 
 .content {
@@ -134,7 +124,6 @@ h2 {
 
 .card:hover .content {
     transform: translateY(0);
-    /* Показать текст */
 }
 
 .title {
@@ -151,12 +140,10 @@ h2 {
     font-size: 14px;
     margin-bottom: 10px;
     display: none;
-    /* Скрыть описание по умолчанию */
 }
 
 .card:hover .description {
     display: block;
-    /* Показать описание при наведении */
 }
 
 .btn {
@@ -167,29 +154,23 @@ h2 {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
-    /* Плавная анимация кнопки */
 }
 
 .btn:hover {
     background-color: #ff8500;
-    /* Яркий цвет при наведении */
     transform: scale(1.1);
-    /* Увеличение кнопки */
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
     background-color: rgba(51, 51, 51, 0.8);
-    /* Полупрозрачный фон для футера */
 }
 
-/* Плавная прокрутка для якорных ссылок */
 html {
     scroll-behavior: smooth;
 }
 
-/* Фоновая анимация */
 @keyframes backgroundAnimation {
     0% {
         background-position: 0% 0%;
@@ -251,40 +232,33 @@ html {
     0% {
         opacity: 0;
         transform: translateX(-100%);
-        /* Начинаем слева за пределами экрана */
     }
 
     50% {
         opacity: 1;
         transform: translateX(33%);
-        /* Перемещаемся к нужной позиции */
     }
 
     100% {
         opacity: 1;
         transform: translateX(33%);
-        /* Останавливаемся на месте */
     }
 }
 
-/* Анимация для картинок, входящих справа */
 @keyframes slideInRight {
     0% {
         opacity: 0;
         transform: translateX(300%);
-        /* Начинаем справа за пределами экрана */
     }
 
     50% {
         opacity: 1;
         transform: translateX(33%);
-        /* Перемещаемся к нужной позиции */
     }
 
     100% {
         opacity: 1;
         transform: translateX(33%);
-        /* Останавливаемся на месте */
     }
 }
 
@@ -336,25 +310,20 @@ td {
     background: #e66b6b;
     color: #fff;
     height: 150px;
-    /* Устанавливаем фиксированную высоту */
     padding: 0 1.5em;
-    /* Убираем вертикальные отступы */
     text-align: center;
 }
 
 .day {
     font-size: 5em;
-    /* Уменьшен размер шрифта для дня */
     font-weight: 900;
     line-height: 1em;
     text-align: center;
     width: 100%;
-    /* Изменено на 100% для выравнивания по ширине */
 }
 
 .month {
     font-size: 2.5em;
-    /* Уменьшено с 3em до 2.5em */
     line-height: 1em;
     text-transform: lowercase;
 }
@@ -387,21 +356,17 @@ td {
     text-align: center;
     font-size: 1.1em;
     transition: background-color 0.3s, color 0.3s;
-    /* Плавный переход для фона и цвета текста */
 }
 
 .calendar tbody td:hover {
     background: #e66b6b;
     color: #fff;
     cursor: pointer;
-    /* Указатель при наведении */
 }
 
 .nd {
     background-color: #4caf50;
-    /* Зеленый фон для сегодняшней даты */
     color: #fff;
-    /* Белый текст */
     font-weight: bold;
     border-radius: 50%;
     padding: 0.3em;
@@ -410,25 +375,17 @@ td {
 
 .important {
     background-color: #ffcc00;
-    /* Ярко-желтый фон для выделения */
     color: #333;
-    /* Темный текст для контраста */
     font-weight: bold;
-    /* Жирный шрифт для выделения */
     border-radius: 50%;
-    /* Закругление для визуального эффекта */
     padding: 0.3em;
-    /* Отступы для выделения */
     transition: background-color 0.3s, color 0.3s;
-    /* Плавный переход */
 }
 
 .important:hover,
 .nd:hover {
-    background-color: #e66b6b;
-    /* Красный при наведении */
+    background-color: #e66b6b; 
     color: #fff;
-    /* Белый текст при наведении */
     cursor: pointer;
 }
 
@@ -436,7 +393,6 @@ td {
 .ring-right {
     position: absolute;
     top: 120px;
-    /* Скорректировано с 167px */
 }
 
 .ring-left {
@@ -462,20 +418,16 @@ td {
     width: 7px;
 }
 
-/* Основной контейнер с двумя колонками */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Секция с основной страницей */
 .page-content {
     flex: 1;
-    /* Контент занимает оставшееся пространство */
 }
 
-/* Секция с формой регистрации */
 .webinar-registration {
     position: relative;
     margin: auto;
@@ -527,14 +479,12 @@ td {
     background-color: #ff8500;
 }
 
-/* Убираем стрелки при фокусе на поле ввода */
 input:focus,
 select:focus,
 button:focus {
     outline: none;
 }
 
-/* Плавная прокрутка для якорных ссылок */
 html {
     scroll-behavior: smooth;
 }
@@ -545,7 +495,6 @@ body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    /* Отключаем горизонтальный скроллинг */
 }
 
 #reviews {
@@ -655,7 +604,6 @@ h1 span {
 
 .review:hover {
     transform: translateY(-10px);
-    /* Плавное поднимание карточки */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -736,7 +684,6 @@ h1 span {
     }
 }
 
-/* Основной стиль секции отзывов */
 .reviews-section {
     background-color: #111;
     color: #fff;
@@ -746,14 +693,12 @@ h1 span {
     text-align: center;
 }
 
-/* Заголовок секции отзывов */
 .reviews-section h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
     color: #FD4;
 }
 
-/* Стиль контейнера с отзывами */
 .reviews-container {
     display: flex;
     flex-direction: column;
@@ -761,7 +706,6 @@ h1 span {
     gap: 40px;
 }
 
-/* Отзыв */
 .review {
     background-color: #222;
     border-radius: 8px;
@@ -777,30 +721,24 @@ h1 span {
 .review:nth-child(2) {
     position: relative;
     top: -20px;
-    /* Сдвигаем блок отзыва с Марией на 20px вверх */
 }
 
-
-/* Наведение на отзыв */
 .review:hover {
     transform: translateY(-10px);
 }
 
-/* Автор отзыва */
 .review-author {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #FD4;
 }
 
-/* Текст отзыва */
 .review-text {
     font-size: 1.1em;
     margin-bottom: 20px;
     font-style: italic;
 }
 
-/* Оценка и звезды */
 .review-rating {
     display: flex;
     align-items: center;
@@ -827,7 +765,6 @@ h1 span {
     color: #FD4;
 }
 
-/* Прогресс */
 .progress {
     background-color: #444;
     height: 8px;
@@ -843,14 +780,12 @@ h1 span {
     transition: width 1s ease;
 }
 
-/* Процент */
 .percent {
     margin-top: 5px;
     color: #FD4;
     font-weight: bold;
 }
 
-/* Форма отзыва */
 .review-form {
     background-color: #222;
     padding: 30px;
@@ -865,19 +800,16 @@ h1 span {
     transition: transform 0.3s ease;
 }
 
-/* Форма отзыва при наведении */
 .review-form:hover {
     transform: translateY(-10px);
 }
 
-/* Заголовок формы отзыва */
 .review-form h3 {
     margin-bottom: 20px;
     font-size: 1.8em;
     color: #FD4;
 }
 
-/* Стили для блока звезд */
 .stars {
     display: flex;
     justify-content: center;
@@ -887,7 +819,6 @@ h1 span {
 
 input.star {
     display: none;
-    /* Скрываем радиокнопки */
 }
 
 label.star {
@@ -895,31 +826,24 @@ label.star {
     cursor: pointer;
     transition: transform 0.3s ease;
     color: #444;
-    /* Цвет серых звезд */
 }
 
 input.star:checked~label.star {
     color: #FD4;
-    /* Цвет выбранных звезд */
 }
 
 input.star:checked+label.star {
     color: #FD4;
-    /* Цвет выбранных звезд */
 }
 
 label.star:hover {
     transform: scale(1.2);
-    /* Увеличение звезды при наведении */
 }
 
 input.star:checked+label.star:hover {
     transform: scale(1.3);
-    /* Увеличение звезды при наведении после выбора */
 }
 
-
-/* Текстовое поле для отзыва */
 textarea.review {
     width: 100%;
     padding: 10px;
@@ -939,7 +863,6 @@ textarea.review:focus {
     outline: none;
 }
 
-/* Кнопка отправить */
 button {
     padding: 12px 20px;
     background-color: #FD4;
